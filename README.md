@@ -4,7 +4,9 @@ This repository contains a solution on a **Computer Vision** problem with the po
 
 **Deep Learning Pipelines** is a high-level Deep Learning framework that facilitates common Deep Learning workflows via the Spark MLlib Pipelines API. It currently supports TensorFlow and Keras with the TensorFlow-backend. The library comes from Databricks.
 
-**Installation**
+---
+
+**Packages Installation**
 
 Check this short [tutorials](https://gist.github.com/iphton/b0ab252c954eb2a28a984774e3ee1f2d) to install necessary packages and technical stuffs.
 
@@ -48,7 +50,9 @@ precision  recall   f1-score   support
 weighted avg       0.84      0.81      0.81       110
 ```
 
-**ROC AUC Score 0.901**
+---
+
+**ROC AUC Score: 0.901**
 
 **Predicted Samples**
 
