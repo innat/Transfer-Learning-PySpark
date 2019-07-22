@@ -4,16 +4,19 @@ This repository contains a solution on a **Computer Vision** problem with the po
 
 **Deep Learning Pipelines** is a high-level Deep Learning framework that facilitates common Deep Learning workflows via the Spark MLlib Pipelines API. It currently supports TensorFlow and Keras with the TensorFlow-backend. The library comes from Databricks.
 
-## Installation
+**Installation**
+
 Check this short [tutorials](https://gist.github.com/iphton/b0ab252c954eb2a28a984774e3ee1f2d) to install necessary packages and technical stuffs.
 
-## Data Set
+**Data Set**
+
 We choose **NumtaDB** as a source of our datasets. It's a collection of Bengali Handwritten Digit data. The dataset contains more than 85,000 digits from over 2,700 contributors. But here we're not planning to work on the whole data set rather than choose randomly 50 images of each class.
 
-## Model Training
+**Model Training**
+
 Here we combine the InceptionV3 model and logistic regression in Spark. The DeepImageFeaturizer automatically peels off the last layer of a pre-trained neural network and uses the output from all the previous layers as features for the logistic regression algorithm.
 
-## Evaluate Model Performance 
+**Evaluate Model Performance**
 
 1. Evaluation matrix
 ```
@@ -45,9 +48,9 @@ precision  recall   f1-score   support
 weighted avg       0.84      0.81      0.81       110
 ```
 
-ROC AUC Score 0.901
+**ROC AUC Score 0.901**
 
-## Predicted Samples
+**Predicted Samples**
 
 ```
 ['image', 'label', 'features', 'rawPrediction', 'probability', 'prediction']
