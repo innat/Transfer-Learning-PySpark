@@ -12,29 +12,31 @@ A promising solution for a **Computer Vision** problem with the power to combine
 
 ---
 
-**Packages Installation**
+### Installation
 
-Check this short [tutorials](https://gist.github.com/iphton/b0ab252c954eb2a28a984774e3ee1f2d) to install necessary packages and technical stuffs.
+Installation is bit pesky right now. So, I decided to write it separately. Check this [GitHub-Gist](https://gist.github.com/iphton/b0ab252c954eb2a28a984774e3ee1f2d) to install necessary packages and technical stuffs.
 
-**Data Set**
+### Data Set
 
-We choose **NumtaDB** as a source of our datasets. It's a collection of Bengali Handwritten Digit data. The dataset contains more than 85,000 digits from over 2,700 contributors. But here we're not planning to work on the whole data set rather than choose randomly 50 images of each class.
+We choose [**NumtaDB**](https://arxiv.org/abs/1806.02452) as a source of our datasets. It's a collection of Bengali Handwritten Digit data. The dataset contains more than **85,000** digits from over **2,700** contributors. But here we're not planning to work on the whole data set rather than choose randomly 50 images of each class. You can get the sample of some images from [here.](https://drive.google.com/open?id=1AbTGJIfD2lhGe-stNIymGaowy7vyVovn) It Contains 500 in total.
 
-**Model Training**
+## Model Training
 
-Here we combine the InceptionV3 model and logistic regression in Spark. The DeepImageFeaturizer automatically peels off the last layer of a pre-trained neural network and uses the output from all the previous layers as features for the logistic regression algorithm.
+Here we combine the **InceptionV3** model and **logistic regression** in Spark. The **DeepImageFeaturizer** automatically peels off the last layer of a pre-trained neural network and uses the output from all the previous layers as features for the logistic regression algorithm.
 
-**Evaluate Model Performance**
+## Evaluation
 
 1. Evaluation matrix
 ```
-F1-Score  0.8111782234361806
-Precision  0.8422058244785519
-Recall  0.8090909090909091
-Accuracy  0.8090909090909091
+F1-Score   0.81117
+Precision  0.84220
+Recall     0.80909
+Accuracy   0.80909
 ```
+
 2. Confusion Metrix
 ![Screenshot from 2019-07-23 00-40-15](https://user-images.githubusercontent.com/17668390/61664640-00afd880-acf5-11e9-8544-91b3e05fbbf4.png)
+
 
 3. Classification Report
 ```
@@ -56,9 +58,8 @@ precision  recall   f1-score   support
 weighted avg       0.84      0.81      0.81       110
 ```
 
----
 
-**ROC AUC Score: 0.901**
+
 
 **Predicted Samples**
 
