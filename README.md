@@ -20,13 +20,36 @@ Installation is bit pesky right now. So, I decided to write it separately. Check
 
 We choose [**NumtaDB**](https://arxiv.org/abs/1806.02452) as a source of our datasets. It's a collection of Bengali Handwritten Digit data. The dataset contains more than **85,000** digits from over **2,700** contributors. But here we're not planning to work on the whole data set rather than choose randomly 50 images of each class. You can get the sample of some images from [here.](https://drive.google.com/open?id=1AbTGJIfD2lhGe-stNIymGaowy7vyVovn) It Contains 500 in total.
 
-## Model Training
+### Model Training
 
 Here we combine the **InceptionV3** model and **logistic regression** in Spark. The **DeepImageFeaturizer** automatically peels off the last layer of a pre-trained neural network and uses the output from all the previous layers as features for the logistic regression algorithm.
 
+
+```python
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml import Pipeline
+from sparkdl import DeepImageFeaturizer
+
+# model: InceptionV3
+# extracting feature from images
+featurizer = DeepImageFeaturizer(inputCol="image",
+                                 outputCol="features",
+                                 modelName="InceptionV3")
+                                 
+# used as a multi class classifier
+lr = LogisticRegression(maxIter=5, regParam=0.03, 
+                        elasticNetParam=0.5, labelCol="label")
+                        
+# define a pipeline model
+sparkdn = Pipeline(stages=[featurizer, lr])
+spark_model = sparkdn.fit(train) # start fitting or training
+```
+
+
 ## Evaluation
 
-1. Evaluation matrix
+**evaluation matrix**
 ```
 F1-Score   0.81117
 Precision  0.84220
@@ -34,11 +57,11 @@ Recall     0.80909
 Accuracy   0.80909
 ```
 
-2. Confusion Metrix
+**confusion Metrix**
 ![Screenshot from 2019-07-23 00-40-15](https://user-images.githubusercontent.com/17668390/61664640-00afd880-acf5-11e9-8544-91b3e05fbbf4.png)
 
 
-3. Classification Report
+**classification Report**
 ```
 precision  recall   f1-score   support
 
@@ -57,8 +80,6 @@ precision  recall   f1-score   support
    macro avg       0.82      0.82      0.80       110
 weighted avg       0.84      0.81      0.81       110
 ```
-
-
 
 
 **Predicted Samples**
@@ -91,3 +112,14 @@ weighted avg       0.84      0.81      0.81       110
 +--------------------+----------+-----+
 only showing top 20 rows
 ```
+
+---
+
+**Related Technologies**
+- Distributed DL with Keras & PySpark — [Elephas](https://github.com/maxpumperla/elephas?source=post_page---------------------------)
+- Distributed Deep Learning Library for Apache Spark — [BigDL](https://github.com/intel-analytics/BigDL?source=post_page---------------------------)
+- TensorFlow to Apache Spark clusters — [TensorFlowOnSpark](https://github.com/yahoo/TensorFlowOnSpark?source=post_page---------------------------)
+
+**References**
+- Databricks: [Deep Learning Guide](https://docs.databricks.com/applications/deep-learning/index.html?source=post_page---------------------------)
+- Apache Spark: [PySpark Machine Learning](https://spark.apache.org/docs/latest/api/python/index.html?source=post_page---------------------------)
