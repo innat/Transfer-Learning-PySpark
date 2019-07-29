@@ -1,4 +1,4 @@
-## Transfer Learning With PySpark
+## Multi-Class Image Classification Using Transfer Learning With PySpark
 
 A promising solution for a **Computer Vision** problem with the power to combine state-of-the-art technologies: **Deep Learning** with **Apache Spark**. We will leverage the power of **Deep Learning Pipelines** for a Multi-Class image classification problem.
 
