@@ -1,8 +1,14 @@
 ## Transfer Learning With PySpark
 
-This repository contains a solution on a **Computer Vision** problem with the power to combined two state-of-the-art technologies: **Deep Learning** & **Apache Spark**. We will leverage the power of **Deep Learning Pipelines** for a Multi-Class image classification problem.
+A promising solution for a **Computer Vision** problem with the power to combine state-of-the-art technologies: **Deep Learning** with **Apache Spark**. We will leverage the power of **Deep Learning Pipelines** for a Multi-Class image classification problem.
 
-**Deep Learning Pipelines** is a high-level Deep Learning framework that facilitates common Deep Learning workflows via the Spark MLlib Pipelines API. It currently supports TensorFlow and Keras with the TensorFlow-backend. The library comes from Databricks.
+**Deep Learning Pipelines** is a high-level Deep Learning framework that facilitates common Deep Learning workflows via the **Spark MLlib** Pipelines API. It currently supports TensorFlow and Keras with the TensorFlow-backend. The library comes from Databricks.
+
+**Blog Articles:** Read technical description from below sources.
+
+- [Towards Data Science | Transfer Learning In PySpark](https://towardsdatascience.com/transfer-learning-with-pyspark-729d49604d45)
+
+- [LinedIn-Article | Transfer Learning In PySpark](https://www.linkedin.com/pulse/transfer-learning-pyspark-mohammed-innat/)
 
 ---
 
